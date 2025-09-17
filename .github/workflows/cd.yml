@@ -21,3 +21,6 @@ jobs:
 
       - name: Build app
         run: go mod tidy && ./scripts/buildprod.sh
+
+      - name: Submit gcloud
+        run: echo "gcloud builds submit"
