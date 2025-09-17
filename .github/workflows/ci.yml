@@ -2,7 +2,7 @@ name: ci
 
 on:
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   tests:
@@ -36,3 +36,9 @@ jobs:
 
       - name: Check formatting
         run: test -z $(go fmt ./...)
+
+      - name: Linting
+        uses: dominikh/staticcheck-action@v1
+        with:
+          version: "latest"
+          install-go: false
